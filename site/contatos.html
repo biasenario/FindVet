@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<title>FINDVET</title>
+</head>
+<body style="background-color:rgba(0,0,0,0.1)">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#fcf1c8!important;">
+		<div class="container">
+			<i class="far fa-star">
+				</i>
+			<a href="#" class="navbar-brand h1 mb-0">FINDVET</a>
+			<button class="navbar-toggler" type="bottom" data-toggle="collapse" data-target="#navbarSite">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSite">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Inicio</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#">Eventos</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="https://veja.abril.com.br/noticias-sobre/animais/">Noticias</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="membros.php">Servicos</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="login/index.php"></a>
+					</li>
+
+
+					<li class="nav-item">
+						<a class="nav-link" href="contatos.html">Contatos</a>
+					</li>
+
+				</ul>
+
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Redes Sociais</a>
+						<div class="dropdown-menu">
+							<a href="https://www.facebook.com/" class="dropdown-item">Facebook</a>
+							<a href="https://twitter.com/?lang=pt-br" class="dropdown-item">Twitter</a>
+							<a href="https://www.youtube.com/" class="dropdown-item">Youtube</a>
+							<a href="https://www.instagram.com/" class="dropdown-item">Instagram</a>
+						</div>
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="container" >
+	<div class="row">
+		<div class="col-12 text-center my-5">
+			<h1 class="display-4"><i class="fas fa-envelope-open mr-2"></i>Contate-Nos</h1>
+		</div>
+	</div>
+	<div class="row justify-content-center mb-5">
+		<div class="col-sm-12 col-md-10 col-lg-8">
+			<form action="enviar.php" method="POST"> 
+				<div class="form-row">
+					<div class="form-group col-sm-6">
+						<label for="nome">Nome</label>
+						<input type="text" class="form-control" name="nome" placeholder="Nome">
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="telefone">Telefone</label>
+						<input type="text" class="form-control" name="telefone" placeholder="Telefone">
+					</div>
+
+					<div class="form-group col-sm-12">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" name="email" placeholder="Email">
+					</div>
+
+					<div class="form-group col-sm-12">
+						<label for="assunto">Assunto</label>
+						<input type="text" class="form-control" name="assunto" placeholder="Assunto">
+					</div>
+
+					<div class="form-group col-sm-12">
+						<label for="mensagem">Mensagem</label>
+						<input type="text" class="form-control" name="mensagem" placeholder="Mensagem">
+					</div>
+					
+
+				</div>
+				<div class="form-row">
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-primary"><i class="fas fa-envelope-open mr-2"></i>Enviar</button>
+						<a class="btn btn-secondary ml-2" tabindex="0" role="button" data-toggle="popover" data-placement="right" data-trigger="focus" title="Ajuda com o Formulário" data-content="Preencha o formulário para receber em seu email..."><i class="fas fa-info-circle mr-2"></i>Ajuda</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+</body>
+</html>
