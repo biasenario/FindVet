@@ -44,10 +44,7 @@ CREATE TABLE `membros` (
 INSERT INTO `membros` (`codigo`, `nome`, `telefone`,`endereco`, `servicos`, `imagem`) VALUES
 (7, 'Vencer Dog ONG', '59871215', 'Rua dos Alegres , 80','Castração gatos e cachorros' '01.jpg'),
 (8, 'Marcia Veterinaria', '55566', 'Rua do Coral , 133', 'Vacinação','03.jpg'),
-(46, 'Cuidados PET', '62655656', 'Rua dos diamantes , 175', 'Vacinação', '04.jpg'),
-(47, 'Bianca', '565455', 'Ativo', '02.jpg'),
-(48, 'Paulo', '5484845', 'Ativo', '05.jpg'),
-(49, 'Marcos', '54544545', 'Inativo', '00.jpg');
+(46, 'Cuidados PET', '62655656', 'Rua dos diamantes , 175', 'Vacinação', '04.jpg');
 
 -- --------------------------------------------------------
 

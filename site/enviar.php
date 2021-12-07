@@ -5,7 +5,7 @@ $email = $_POST['email'];
 $mensagem = $_POST['mensagem'];
 $assunto = $_POST['assunto'];
 
-$dest = 'hugovasconcelosf@hotmail.com';
+$dest = 'biase901@gmail.com';
 
 $dados = 'Nome: '.$nome.' - Email: '.$email.' - Telefone: '.$telefone.' - A mensagem enviada é: '.$mensagem;
 

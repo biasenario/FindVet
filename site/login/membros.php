@@ -18,28 +18,18 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-15">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-15" style="background-color:#fcf1c8!important;">
 		<div class="container">
-			<a href="#" class="navbar-brand h1 mb-0">Painél Administrativo</a>
+			<a href="#" class="navbar-brand h1 mb-0">Cadastro</a>
 			<button class="navbar-toggler" type="bottom" data-toggle="collapse" data-target="#navbarSite">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSite">
 				<ul class="navbar-nav mr-auto">
-					
-
-					<li class="nav-item">
-						<a class="nav-link" href="membros.php">Membros</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="pastores.php">Pastores</a>
-					</li>
 
 					<li class="nav-item">
 						<a class="nav-link" href="../index.html">Sair</a>
 					</li>
-
 
 				</ul>
 
@@ -51,7 +41,7 @@
 
 <div id="box_usuarios">
 <br /><br />
-<a class="a2" href="membros.php?pg=cadastra">Cadastrar Membros</a>
+<a class="a2" href="membros.php?pg=cadastra">Cadastrar</a>
 <h1>Membros</h1>
 
 
@@ -68,8 +58,9 @@
         <td><strong>Código:</strong></td>
         <td><strong>Nome:</strong></td>
         <td><strong>Telefone:</strong></td>
-        <td><strong>Status:</strong></td>
-	<td><strong>Imagem:</strong></td>
+        <td><strong>Endereco</strong></td>
+        <td><strong>Servicos:</strong></td>
+	      <td><strong>Imagem:</strong></td>
         <td></td>
       </tr>
      
@@ -80,7 +71,8 @@
       			$id = $res_1['codigo'];
       			$nome = $res_1['nome'];
       			$telefone = $res_1['telefone'];
-      			$status = $res_1['status'];
+            $endereco = $res_1['endereco'];
+      			$servico = $res_1['servicos'];
       			$imagem = $res_1['imagem'];
       		
       	 ?>
@@ -90,21 +82,13 @@
         <td><h3><?php echo $id; ?></h3></td>
         <td><h3><?php echo $nome; ?></h3></td>
         <td><h3><?php echo $telefone; ?></h3></td>
-        <td><h3><?php echo $status; ?></h3></td>
-        
+        <td><h3><?php echo $endereco; ?></h3></td>
+        <td><h3><?php echo $servico; ?></h3></td>
         <td><img src="imagens/<?php echo $imagem; ?>" width="50"></td>
 	
         <td></td>
         <td>
         <a class="a" href="membros.php?pg=todos&func=deleta&id=<?php echo $id; ?>"><img title="Excluir Membro" src="img/deleta.jpg" width="18" height="18" border="0"></a>
-       
-        <?php if($status == 'Inativo'){ ?>
-        <a class="a" href="membros.php?pg=todos&func=ativa&id=<?php echo $id; ?>"><img title="Ativar novamente" src="img/correto.jpg" width="20" height="20" border="0"></a>
-        <?php } ?>
-
-        <?php if($status == 'Ativo'){ ?>
-           <a class="a" href="membros.php?pg=todos&func=inativa&id=<?php echo $id; ?>"><img title="Inativar Membro" src="img/ico_bloqueado.png" width="18" height="18" border="0"></a>
-        <?php } ?>
         
         <a class="a" href="membros.php?pg=todos&func=edita&id=<?php echo $id; ?>"><img title="Editar Dados Cadastrais" src="img/ico-editar.png" width="18" height="18" border="0"></a>
        </td>
@@ -147,12 +131,18 @@
      
       </tr>
       <tr>
-      <td>Status</td> </tr>
+      <td>Endereço</td> </tr>
       <tr>
-      <td><label for="select"></label>
-        <select name="status" size="1" id="select">
-          <option value="Ativo">Ativo</option>
-          <option value="Inativo">Inativo</option></select></td>
+      <td>
+      <input type="text" name="Endereco" id="textfield1" required></td>
+      </td>
+
+      <tr>
+      <td>Serviços</td> </tr>
+      <tr>
+      <td>
+      <input type="text" name="Servicos" id="textfield1" required></td>
+      </td>
       
     </tr>
 
@@ -213,16 +203,14 @@ while($res_1 = mysqli_fetch_array($consulta)){
      
       </tr>
       <tr>
-      <td>Status</td> </tr>
-      <tr>
-      <td><label for="select"></label>
-        <select name="status" size="1" id="select">
-          <option value="<?php echo $res_1['status']; ?>"><?php echo $res_1['status']; ?></option>
-          <option value=""></option>
-          <option value="Ativo">Ativo</option>
-          <option value="Inativo">Inativo</option>
-          </select></td>
-      
+        <td>
+        <input type="text" value="<?php echo $res_1['endereco']; ?>" name="endereco" id="textfield1" required></td>
+        <td>
+    </tr>
+    <tr>
+    <td>
+        <input type="text" value="<?php echo $res_1['servicos']; ?>" name="servicos" id="textfield1" required></td>
+        <td>
     </tr>
 
     <tr>
@@ -265,26 +253,6 @@ while($res_1 = mysqli_fetch_array($consulta)){
 
 
 
-<!ATIVAR O MEMBRO>
-<?php if(@$_GET['func'] == 'ativa'){
-	$id = $_GET['id'];
-	$sql = "UPDATE membros SET status = 'Ativo' WHERE codigo = '$id'";
-	mysqli_query($conexao, $sql);
-		
-	echo "<script language='javascript'>window.location='membros.php';</script>";
-}?>
-
-
-
-
-<!INATIVAR O MEMBRO>
-<?php if(@$_GET['func'] == 'inativa'){
-	$id = $_GET['id'];
-	$sql = "UPDATE membros SET status = 'Inativo' WHERE codigo = '$id'";
-	mysqli_query($conexao, $sql);
-		
-	echo "<script language='javascript'>window.location='membros.php';</script>";
-}?>
 
 <br />
 </div>
